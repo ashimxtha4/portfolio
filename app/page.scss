@@ -1,40 +1,112 @@
+@keyframes cardAnimation {
+  0% {
+    opacity: 0.25;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .main {
   .container {
     min-height: 400px;
     border: solid 1px white;
-    // display: grid;
-    gap: 1.4rem;
-    grid-template-columns: repeat(4, 1fr);
-    .card {
-      background: #0f0f0f;
-      height: 328px;
-      width: 549px;
-      border-radius: 30px;
-      // border: solid 1px white;
-      position: relative;
-      transform: scale(0.6);
-      &::before {
-        border-radius: 30px;
-        content: "";
-        display: inline-block;
-        height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1146px;
+    // grid-template-columns: repeat(4, 1fr);
+
+    section {
+      padding-inline: 8px;
+    }
+
+    .topSection {
+      // height: 324px;
+      border: solid 1px white;
+      display: flex;
+      gap: 24px;
+      article {
         width: 100%;
-        background: linear-gradient(
-          120deg,
-          rgba(255, 255, 255, 0.3),
-          rgba(255, 255, 255, 0.05)
-        );
-        opacity: 0.25;
+        border: solid 1px;
+      }
+      .intro {
+        min-height: 324px;
+        width: 100%;
+        border-radius: inherit;
+        // border: solid 1px white;
+      }
+      .secound {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        .marquee {
+          height: 53px;
+          padding: 16px 24px;
+        }
+        .flex2 {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          gap: 24px;
+          .subCard {
+            height: 100%;
+            width: 100%;
+            border-radius: inherit;
+          }
+        }
       }
     }
-    article {
-      height: 50px;
-      width: 50px;
-      border: solid 1px white;
+
+    .midSection {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      border: solid 1px;
+      article {
+        height: 245px;
+        border: solid 1px red;
+      }
+      .cardContainer {
+        height: 245px;
+      }
+      .third {
+        width: 50%;
+      }
+      .fourth {
+        width: 100%;
+      }
+      .fifth {
+        width: 50%;
+      }
     }
-    .first {
-      position: sticky;
-      top: 0px;
-    }
+
+    // .card {
+    //   background: #0f0f0f;
+    //   // height: 328px;
+    //   // width: 100%;
+    //   border-radius: 30px;
+    //   position: relative;
+    //   // animation: cardAnimation 1.5s ease;
+    //   &::before {
+    //     border-radius: 30px;
+    //     content: "";
+    //     display: inline-block;
+    //     height: 100%;
+    //     width: 100%;
+    //     background: linear-gradient(
+    //       120deg,
+    //       rgba(255, 255, 255, 0.3),
+    //       rgba(255, 255, 255, 0.05)
+    //     );
+    //     opacity: 0.25;
+    //   }
+    // }
+    // .visible {
+    //   opacity: 1;
+    //   transform: scale(1);
+    // }
   }
 }
