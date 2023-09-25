@@ -22,7 +22,7 @@ export default function Home() {
         <article className="secound">
           <ScrollAnimation>
             <div className="marquee">
-              <marquee  direction="left">ashim</marquee>
+              {/* <marquee  direction="left">ashim</marquee> */}
             </div>
           </ScrollAnimation>
 
