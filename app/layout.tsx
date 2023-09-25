@@ -41,7 +41,7 @@ export default function RootLayout({
               </Link>
             </div>
             <Link className="letsTalk" href="#">
-              Let's talk
+              {"Let's talk"}
             </Link>
           </div>
         </header>
