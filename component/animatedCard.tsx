@@ -3,7 +3,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./animatedCard.scss";
 
-const ScrollAnimation = ({ children }: { children?: React.ReactNode }) => {
+const ScrollAnimation = (
+  // { children }: { children?: React.ReactNode },
+  props: { class?: string; children?: React.ReactNode }
+) => {
   const [isVisible, setIsVisible] = useState(false);
   const myRef = useRef();
   // console.log(isVisible);
@@ -23,13 +26,19 @@ const ScrollAnimation = ({ children }: { children?: React.ReactNode }) => {
 
     return () => {
       //@ts-ignore
-      observer.unobserve(myRef.current);
+      // observer.unobserve(myRef.current);
     };
   }, []);
   return (
-    //@ts-ignore
-    <div ref={myRef} className={`card ${isVisible ? "visible" : ""}`}>
-      {children}
+    <div
+      //@ts-ignore
+
+      ref={myRef}
+      className={`${props.class ? props.class : "card"} ${
+        isVisible ? "visible" : ""
+      }`}
+    >
+      {props.children}
     </div>
   );
 };
