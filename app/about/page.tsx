@@ -9,7 +9,7 @@ export default function about() {
   return (
     <>
       <div className="preloader"></div>
-      <div className="container">
+      <div className="container aboutContainer">
         <div className="leftDiv">
           <div className="personalDiv">
             <ScrollAnimation>

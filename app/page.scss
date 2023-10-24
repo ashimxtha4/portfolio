@@ -17,7 +17,7 @@
     flex-direction: column;
     gap: 24px;
     max-width: 1146px;
-    // grid-template-columns: repeat(4, 1fr);
+    width: 100%;
     .textDiv {
       width: calc(214 * 100% / 262);
       height: 58px;
