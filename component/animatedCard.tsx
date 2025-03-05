@@ -8,7 +8,7 @@ const ScrollAnimation = (
   props: { class?: string; children?: React.ReactNode }
 ) => {
   const [isVisible, setIsVisible] = useState(false);
-  const myRef = useRef();
+  const myRef = useRef(null);
   // console.log(isVisible);
   useEffect(() => {
     const observer = new IntersectionObserver((entry) => {
