@@ -4,7 +4,7 @@
   justify-content: center;
   .aboutContainer {
     min-height: 400px;
-    border: solid 1px white;
+    // border: solid 1px white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -12,9 +12,9 @@
     max-width: 1146px;
     .leftDiv {
       width: calc(370 * 100% / 1146);
-      border: solid 1px;
+      // border: solid 1px;
       .personalDiv {
-        border: solid 1px;
+        // border: solid 1px;
         position: sticky;
         top: 15%;
         .container {
@@ -30,17 +30,17 @@
             height: 323px;
           }
           .name {
-            border: solid 1px;
+            // border: solid 1px;
             margin-bottom: 8px;
           }
           .email {
-            border: solid 1px;
+            // border: solid 1px;
             margin-bottom: 34px;
           }
           .socialLinks {
             display: flex;
             justify-content: center;
-            border: solid 1px;
+            // border: solid 1px;
             gap: 10px;
             margin-bottom: 36px;
             .icons {
@@ -103,7 +103,7 @@
     }
     .rightDiv {
       width: calc(692.8 * 100% / 1146);
-      border: solid 1px;
+      // border: solid 1px;
       display: flex;
       flex-direction: column;
       gap: 85px;
