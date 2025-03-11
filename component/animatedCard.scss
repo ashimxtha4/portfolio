@@ -33,3 +33,36 @@
   opacity: 1;
   transform: scale(1);
 }
+
+
+.ashim {
+  background: #0f0f0f;
+  // height: 328px;
+  width: 100%;
+  border-radius: 30px;
+  position: relative;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: ease 1.25s;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 30px;
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.05)
+    );
+    opacity: 0.25;
+  }
+  &:hover {
+    .bottomImage {
+      opacity: 1 !important;
+    }
+  }
+}
