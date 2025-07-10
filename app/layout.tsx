@@ -37,8 +37,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 Contact
               </Link>
             </div>
-            <Link className="letsTalk" href="./AshimResume.pdf" target="_blank" download="">
-              {"Let's talk"}
+            <Link className="letsTalk" href="./Ashim-resume.pdf" target="_blank" download="">
+              {"Download Resume"}
             </Link>
           </div>
         </header>
