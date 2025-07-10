@@ -1,12 +1,12 @@
-"use client";
-import Image from "next/image";
-import "./page.scss";
-import ScrollAnimation from "@/component/animatedCard";
-import logo from "@/public/ASHIM-remove.png";
-import decor from "@/public/decor.svg";
-import { Icon } from "@iconify/react";
+'use client';
+import Image from 'next/image';
+import './page.scss';
+import ScrollAnimation from '@/component/animatedCard';
+import logo from '@/public/ASHIM-remove.png';
+import decor from '@/public/decor.svg';
+import { Icon } from '@iconify/react';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -22,9 +22,7 @@ export default function Home() {
                 <div className="info">
                   <h4 className="job">Web Developer</h4>
                   <span className="name">Ashim Raj Shrestha</span>
-                  <span className="desc">
-                    I am Web Developer for all your web problems.
-                  </span>
+                  <span className="desc">I am Web Developer for all your web problems.</span>
                 </div>
                 <div className="bottomImage">
                   <Image className="decor" src={decor} alt="decor" />
@@ -57,11 +55,7 @@ export default function Home() {
               <ScrollAnimation>
                 <div className="subCard">
                   <div className="imageDiv">
-                    <Icon
-                      icon="mdi:application-braces-outline"
-                      height="72"
-                      color="#FFF"
-                    />
+                    <Icon icon="mdi:application-braces-outline" height="72" color="#FFF" />
                   </div>
                   <div className="textDiv">
                     <div className="texts">
@@ -77,7 +71,8 @@ export default function Home() {
             </div>
           </article>
         </section>
-        <section className="midSection">
+        {/* midSection */}
+        <section className=" hidden">
           <article className="third">
             <ScrollAnimation>
               <div className="cardContainer subCard">
@@ -118,15 +113,11 @@ export default function Home() {
             <ScrollAnimation>
               <div className="cardContainer profile">
                 <div className="logos">
-                  <Link className="icons" href={""}>
+                  <Link className="icons" href={''}>
                     <Icon icon="et:linkedin" width="60" height="60" />
                   </Link>
-                  <Link className="icons" href={""}>
-                    <Icon
-                      icon="teenyicons:git-outline"
-                      width="60"
-                      height="60"
-                    />
+                  <Link className="icons" href={''}>
+                    <Icon icon="teenyicons:git-outline" width="60" height="60" />
                   </Link>
                 </div>
                 <div className="textDiv">
