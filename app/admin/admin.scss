@@ -1,0 +1,164 @@
+@import '../../style/_main.scss';
+
+.adminPage {
+    padding-bottom: 80px;
+
+    header {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+            color: #fff;
+            font-size: 32px;
+        }
+
+        .newPostBtn {
+            background: #5b78f6;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+
+            &:hover {
+                background: #4a67e5;
+            }
+        }
+    }
+
+    .adminGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        .adminCard {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .info {
+                h3 {
+                    color: #fff;
+                    font-size: 18px;
+                    margin-bottom: 5px;
+                }
+
+                span {
+                    color: #9f9f9f;
+                    font-size: 12px;
+                }
+            }
+
+            .actions {
+                display: flex;
+                gap: 10px;
+
+                button {
+                    padding: 8px 12px;
+                    border-radius: 6px;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 14px;
+
+                    &.edit {
+                        background: rgba(255, 255, 255, 0.1);
+                        color: #fff;
+
+                        &:hover {
+                            background: rgba(255, 255, 255, 0.2);
+                        }
+                    }
+
+                    &.delete {
+                        background: rgba(231, 76, 60, 0.2);
+                        color: #e74c3c;
+
+                        &:hover {
+                            background: rgba(231, 76, 60, 0.3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .editorForm {
+        background: #1a1a1a;
+        padding: 30px;
+        border-radius: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+
+        .formGroup {
+            margin-bottom: 20px;
+
+            label {
+                display: block;
+                color: #bcbcbc;
+                margin-bottom: 8px;
+                font-size: 14px;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                background: #0f0f0f;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 12px;
+                border-radius: 8px;
+                color: #fff;
+                font-family: inherit;
+
+                &:focus {
+                    outline: none;
+                    border-color: #5b78f6;
+                }
+            }
+
+            textarea {
+                min-height: 200px;
+                resize: vertical;
+            }
+        }
+
+        .formActions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+
+            button {
+                padding: 12px 24px;
+                border-radius: 8px;
+                border: none;
+                cursor: pointer;
+                font-weight: 500;
+
+                &[type="submit"] {
+                    background: #5b78f6;
+                    color: #fff;
+
+                    &:hover {
+                        background: #4a67e5;
+                    }
+                }
+
+                &[type="button"] {
+                    background: transparent;
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    color: #fff;
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.05);
+                    }
+                }
+            }
+        }
+    }
+}

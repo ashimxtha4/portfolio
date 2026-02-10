@@ -5,6 +5,8 @@ import ScrollAnimation from '@/component/animatedCard';
 import logo from '@/public/ASHIM-remove.png';
 import decor from '@/public/decor.svg';
 import { Icon } from '@iconify/react';
+import profile from '@/public/Profile.jpeg';
+
 
 import Link from 'next/link';
 
@@ -18,7 +20,16 @@ export default function Home() {
           <article className="first">
             <ScrollAnimation>
               <div className="intro">
-                <div className="imageDiv"></div>
+                <div className="imageDiv">
+                  <Image
+                    src={profile}
+                    alt="Ashim Raj Shrestha"
+                    width={350}
+                    height={350}
+                    className="profileImage"
+                    priority
+                  />
+                </div>
                 <div className="info">
                   <h4 className="job">Web Developer</h4>
                   <span className="name">Ashim Raj Shrestha</span>

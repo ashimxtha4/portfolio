@@ -5,6 +5,7 @@
   0% {
     transform: scaleY(1);
   }
+
   100% {
     transform: scaleY(0);
   }
@@ -27,6 +28,7 @@ body {
 }
 
 /* body { */
+/* body { */
 .preloader {
   position: fixed;
   z-index: 500;
@@ -38,32 +40,42 @@ body {
   animation: preloader 0.8s ease;
   background-color: #222;
 }
+
 .container {
-  height: 100%;
+  width: 100%;
   max-width: 1170px;
   margin-inline: auto;
+  padding-inline: 20px;
+  /* Add padding for mobile */
 }
+
+/* Mobile Navigation (Default) */
 .navigation {
-  height: 71px;
   width: 100%;
+  padding-block: 15px;
+  /* Vertical padding to center content */
   position: sticky;
   top: 0px;
-  z-index: 5;
+  z-index: 50;
+  /* Increased z-index */
   background-color: #1b1111;
 
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
-    max-width: 1170px;
-    margin-inline: auto;
+    position: relative;
+    /* Context for absolute positioning */
+
     .logo {
       height: 40px;
       width: 85px;
       position: relative;
       padding-top: 6px;
       perspective: 1000px;
+      z-index: 52;
+
+      /* Above mobile menu */
       .logoImg {
         object-fit: cover;
         width: 100%;
@@ -71,36 +83,143 @@ body {
         transform: scale(1.5);
       }
     }
+
+    .mobileToggle {
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      display: block;
+      /* Visible on mobile */
+      z-index: 52;
+      /* Above mobile menu */
+      padding: 5px;
+    }
+
     .routes {
       display: flex;
-      column-gap: 49px;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #1b1111;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      transition: transform 0.3s ease-in-out;
+      transform: translateY(-100%);
+      /* Hidden by default */
+      z-index: 51;
+
+      &.open {
+        transform: translateY(0);
+        /* Visible when open */
+      }
+
       a {
-        color: #676767;
+        color: #bcbcbc;
         text-decoration: none;
-        &:hover {
+        font-size: 24px;
+        /* Larger font for mobile */
+        transition: color 0.3s ease;
+
+        &:hover,
+        &.active {
           color: #ffffff;
+          font-weight: 600;
         }
       }
+
+      .mobile-only {
+        display: block;
+        margin-top: 20px;
+        padding: 12px 24px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        font-size: 18px;
+      }
+    }
+
+    .desktop-only {
+      display: none;
+      /* Hidden on mobile */
     }
   }
 }
-.main {
-  padding-top: 80px;
+
+/* Tablet & Desktop */
+@media (min-width: 768px) {
+  .navigation .container {
+    .mobileToggle {
+      display: none;
+      /* Hide toggle on desktop */
+    }
+
+    .routes {
+      position: static;
+      height: auto;
+      width: auto;
+      background: transparent;
+      transform: none;
+      flex-direction: row;
+      display: flex;
+      column-gap: 30px;
+
+      .mobile-only {
+        display: none;
+      }
+
+      a {
+        font-size: 14px;
+        /* Reset font size */
+      }
+    }
+
+    .desktop-only {
+      display: block;
+      /* Show desktop resume button */
+    }
+  }
 }
+
+@media (min-width: 1024px) {
+  .navigation .container .routes {
+    column-gap: 49px;
+  }
+}
+
+.main {
+  padding-top: 40px;
+  /* Reduced for mobile */
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding-top: 80px;
+  }
+}
+
 .footer {
-  height: 320px;
-  padding-top: 128px;
+  height: auto;
+  /* Dynamic height */
+  padding-block: 60px;
+  /* Vertical padding */
+
   .container {
     display: flex;
     flex-direction: column;
     gap: 32px;
     align-items: center;
+
     .footerLogo {
       height: 40px;
       width: 100px;
       position: relative;
       padding-top: 6px;
       perspective: 1000px;
+
       .logoImg {
         object-fit: cover;
         width: 100%;
@@ -108,12 +227,18 @@ body {
         transform: scale(1.5);
       }
     }
+
     .routes {
       display: flex;
-      column-gap: 49px;
+      flex-wrap: wrap;
+      /* Allow wrapping */
+      justify-content: center;
+      gap: 20px;
+
       a {
         color: #676767;
         text-decoration: none;
+
         &:hover {
           color: #ffffff;
         }
@@ -121,4 +246,5 @@ body {
     }
   }
 }
+
 /* } */

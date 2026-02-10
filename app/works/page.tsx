@@ -46,7 +46,7 @@ export default function Work() {
     { link: 'https://basobaas.com/', image: basobaas, title: 'Basobaas', subText: 'Real Estate' },
   ];
   return (
-    <div className="mx-auto max-w-[1146px] grid grid-cols-3 gap-[18px]">
+    <div className="mx-auto max-w-[1146px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[18px] px-4 md:px-0 pb-20">
       {worksList.map((work, index) => (
         <Link className='h-[100%]' key={index} href={work.link} target="_blank">
           <ScrollAnimation>

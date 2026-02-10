@@ -1,0 +1,237 @@
+@import '../../style/_main.scss';
+
+.contactPage {
+    padding-bottom: 80px;
+
+    .topSection {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 60px;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .titleBlock {
+            .subHead {
+                color: #bcbcbc;
+                font-size: 14px;
+                opacity: 0.7;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+                display: block;
+            }
+
+            .title {
+                font-size: 36px;
+                color: #ffffff;
+                font-weight: 600;
+                margin-bottom: 16px;
+                line-height: 1.2;
+
+                @media (min-width: 768px) {
+                    font-size: 48px;
+                }
+            }
+
+            .desc {
+                color: #9f9f9f;
+                font-size: 16px;
+                max-width: 500px;
+                line-height: 1.6;
+            }
+        }
+
+        .socialLinks {
+            display: flex;
+            gap: 16px;
+
+            .socialIcon {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: #1a1a1a;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                transition: all 0.3s ease;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+
+                &:hover {
+                    background: #fff;
+                    color: #000;
+                    transform: translateY(-3px);
+                }
+            }
+        }
+    }
+
+    .contentGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+
+        @media (min-width: 900px) {
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+        }
+
+        .infoCard {
+            background: #1a1a1a;
+            border-radius: 30px;
+            padding: 40px 30px;
+            height: fit-content;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            .infoItem {
+                margin-bottom: 30px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                .label {
+                    display: block;
+                    color: #bcbcbc;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    opacity: 0.7;
+                    margin-bottom: 8px;
+                    letter-spacing: 1px;
+                }
+
+                .value {
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: 500;
+                    display: block;
+                    text-decoration: none;
+                    transition: color 0.3s;
+
+                    &:hover {
+                        color: #5b78f6;
+                    }
+                }
+            }
+        }
+
+        .formCard {
+            background: #1a1a1a;
+            border-radius: 30px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            @media (min-width: 768px) {
+                padding: 40px;
+            }
+
+            .formHeader {
+                margin-bottom: 30px;
+
+                h3 {
+                    color: #fff;
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    color: #9f9f9f;
+                    font-size: 14px;
+                }
+            }
+
+            .formGroup {
+                margin-bottom: 24px;
+
+                label {
+                    display: block;
+                    color: #fff;
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+
+                input,
+                textarea {
+                    width: 100%;
+                    background: #0f0f0f;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border-radius: 12px;
+                    padding: 16px;
+                    color: #fff;
+                    font-size: 16px;
+                    transition: border-color 0.3s, background 0.3s;
+                    font-family: 'Inter', sans-serif;
+
+                    &:focus {
+                        outline: none;
+                        border-color: #5b78f6;
+                        background: #151515;
+                    }
+
+                    &::placeholder {
+                        color: #555;
+                    }
+                }
+
+                textarea {
+                    resize: vertical;
+                    min-height: 150px;
+                }
+            }
+
+            .submitBtn {
+                width: 100%;
+                background: #fff;
+                color: #000;
+                font-weight: 600;
+                padding: 16px;
+                border-radius: 12px;
+                border: none;
+                font-size: 16px;
+                cursor: pointer;
+                transition: transform 0.2s, background-color 0.2s;
+
+                &:hover {
+                    background: #f0f0f0;
+                    transform: translateY(-2px);
+                }
+
+                &:active {
+                    transform: translateY(0);
+                }
+
+                &:disabled {
+                    opacity: 0.7;
+                    cursor: not-allowed;
+                    transform: none;
+                }
+            }
+
+            .statusMessage {
+                margin-top: 20px;
+                padding: 12px;
+                border-radius: 8px;
+                font-size: 14px;
+                text-align: center;
+
+                &.success {
+                    background: rgba(46, 204, 113, 0.2);
+                    color: #2ecc71;
+                    border: 1px solid rgba(46, 204, 113, 0.3);
+                }
+
+                &.error {
+                    background: rgba(231, 76, 60, 0.2);
+                    color: #e74c3c;
+                    border: 1px solid rgba(231, 76, 60, 0.3);
+                }
+            }
+        }
+    }
+}

@@ -1,9 +1,12 @@
 'use client';
 
 import ScrollAnimation from '@/component/animatedCard';
+import Image from 'next/image';
 import './about.scss';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import Link from 'next/link';
+import profile from '@/public/Profile.jpeg';
+
 
 export default function about() {
   const experiences: any[] = [
@@ -88,7 +91,16 @@ export default function about() {
           <div className="personalDiv">
             <ScrollAnimation>
               <div className="container">
-                <div className="imageDiv"></div>
+                <div className="imageDiv">
+                  <Image
+                    src={profile}
+                    alt="Ashim Raj Shrestha"
+                    width={350}
+                    height={350}
+                    className="profileImage"
+                    priority
+                  />
+                </div>
                 <h2 className="name text-[26px] font-semibold text-[#FFFFFF]">Ashim Raj Shrestha</h2>
                 <p className="email">ashim.xtha2000@gmail.com</p>
                 <div className="socialLinks">

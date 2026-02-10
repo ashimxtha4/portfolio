@@ -1,4 +1,4 @@
-import ScrollAnimation from '@/component/animatedCard';
+import Navbar from '@/component/Navbar';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -18,30 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>{/* <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" /> */}</head>
       <body className={inter.className}>
-        <header className="navigation">
-          <div className="container">
-            <div className="logo">
-              <Image className="logoImg" src={logo} alt="logo" />
-            </div>
-            <div className="routes">
-              <Link href="/" className="navLink">
-                Home
-              </Link>
-              <Link href="about" className="navLink">
-                About
-              </Link>
-              <Link href="works" className="navLink">
-                Works
-              </Link>
-              <Link href="contact" className="navLink">
-                Contact
-              </Link>
-            </div>
-            <Link className="letsTalk" href="./Ashim-resume.pdf" target="_blank" download="">
-              {"Download Resume"}
-            </Link>
-          </div>
-        </header>
+        <Navbar />
         <main className="main">{children}</main>
         <footer className="footer">
           <div className="container">

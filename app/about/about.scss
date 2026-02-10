@@ -1,98 +1,115 @@
 .main {
   margin-inline: auto;
-  display: flex;
-  justify-content: center;
+
   .aboutContainer {
     min-height: 400px;
-    // border: solid 1px white;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column; // Mobile first!
     width: 100%;
     max-width: 1146px;
+    padding-inline: 20px;
+
+    @media (min-width: 900px) {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-inline: 0;
+    }
+
     .leftDiv {
-      width: calc(370 * 100% / 1146);
-      // border: solid 1px;
+      width: 100%;
+      margin-bottom: 40px;
+
+      @media (min-width: 900px) {
+        width: 370px; // Fixed width for desktop sidebar
+        width: calc(370 * 100% / 1146);
+        margin-bottom: 0;
+      }
+
       .personalDiv {
-        // border: solid 1px;
-        position: sticky;
-        top: 15%;
+        position: relative; // Static on mobile
+
+        @media (min-width: 900px) {
+          position: sticky;
+          top: 100px; // Better sticky position
+        }
+
         .container {
-          display: block;
-          height: 650px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: auto; // Auto height
           padding: 24px 24px 34px 24px;
           text-align: center;
+          background: #1a1a1a;
+          border-radius: 20px;
+
           .imageDiv {
-            background: linear-gradient(90deg, #3c58e3 -15%, #c2ebff 58%, #5ab5e2 97%);
             border-radius: 30px;
-            margin-bottom: 40px;
+            margin-bottom: 24px;
             width: 100%;
-            height: 323px;
+            max-width: 323px;
+            aspect-ratio: 1;
+            height: auto;
+            overflow: hidden;
+
+            .profileImage {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: top;
+            }
           }
+
           .name {
-            // border: solid 1px;
             margin-bottom: 8px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
           }
+
           .email {
-            // border: solid 1px;
-            margin-bottom: 34px;
+            margin-bottom: 24px;
+            color: #bcbcbc;
           }
+
           .socialLinks {
             display: flex;
             justify-content: center;
-            // border: solid 1px;
-            gap: 10px;
-            margin-bottom: 36px;
+            gap: 15px;
+            margin-bottom: 30px;
+
             .icons {
-              width: 50px;
-              height: 50px;
+              width: 44px;
+              height: 44px;
               display: flex;
               align-items: center;
               justify-content: center;
               border-radius: 50%;
               position: relative;
-              box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
               border: 1px solid rgba(255, 255, 255, 0.1);
               color: #fff;
-              transition: 0.5 s ease;
-              &::before {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                border-radius: 50%;
-                // z-index: -1;
-                opacity: 0.1;
-                background: linear-gradient(
-                  120deg,
-                  rgba(255, 255, 255, 0.5),
-                  rgba(255, 255, 255, 0.1)
-                );
-                backdrop-filter: blur(40px);
-              }
+              transition: 0.3s ease;
+
               &:hover {
                 background: #ffffff;
                 color: #0f0f0f;
               }
             }
           }
+
           .contactMe {
-            width: 100%;
+            display: inline-block;
             transition: 0.3s;
-            border-radius: 16px;
+            border-radius: 12px;
             font-size: 16px;
-            font-weight: 500;
-            padding: 12px 30px;
+            font-weight: 600;
+            padding: 14px 30px;
             background: #323232;
             color: #fff;
             text-decoration: none;
             cursor: pointer;
-            &::after {
-              background: linear-gradient(120deg, rgb(255 255 255 / 12%), rgb(255 255 255 / 1%));
-              content: '';
-              z-index: -1;
-              border-radius: 30px;
-            }
+            width: 100%;
+
             &:hover {
               background: #fff;
               color: #323232;
@@ -101,36 +118,54 @@
         }
       }
     }
+
     .rightDiv {
-      width: calc(692.8 * 100% / 1146);
-      // border: solid 1px;
+      width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 85px;
+      gap: 60px;
+
+      @media (min-width: 900px) {
+        width: calc(692.8 * 100% / 1146);
+        gap: 85px;
+      }
+
       .aboutMe {
         display: flex;
         flex-direction: column;
-        gap: 37px;
-        // margin-bottom: 25px;
+        gap: 20px;
+
+        h2 {
+          color: #fff;
+          margin-bottom: 10px;
+        }
       }
-      .exp {
+
+      .exp,
+      .skills {
         display: flex;
         flex-direction: column;
         gap: 22px;
-        .title {
-          font-weight: 500;
+
+        h2 {
+          color: #fff;
+          margin-bottom: 10px;
         }
+
         .content {
           display: flex;
           flex-direction: column;
-          gap: 40px;
+          gap: 30px;
+
           .group {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
           }
         }
       }
+
+      // Skills specific grid adjustment if needed, usually flex-wrap handles it
     }
   }
 }
