@@ -1,4 +1,4 @@
-@import '../../style/main';
+@use '../../style/_main.scss' as *;
 
 .loginPage {
     min-height: 60vh;

@@ -12,10 +12,10 @@
     "@iconify/react": "^5.2.0",
     "css-loader": "^7.1.2",
     "isomorphic-dompurify": "^3.0.0-rc.2",
-    "next": "15.2.1",
+    "next": "^16.1.6",
     "postcss-loader": "^8.1.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "react-quill-new": "^3.8.3",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.85.1"
