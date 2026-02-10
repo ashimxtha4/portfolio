@@ -14,7 +14,9 @@ export async function getPosts(): Promise<BlogPost[]> {
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | undefined> {
+    console.log("🚀 ~ getPostBySlug ~ slug:", slug)
     const posts = await getPosts();
+    console.log("🚀 ~ getPostBySlug ~ posts:", posts)
     return posts.find((post) => post.slug === slug);
 }
 
