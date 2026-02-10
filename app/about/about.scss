@@ -10,7 +10,7 @@
     padding-inline: 20px;
 
     @media (min-width: 900px) {
-      flex-direction: row;
+      flex-direction: row !important;
       justify-content: space-between;
       padding-inline: 0;
     }
